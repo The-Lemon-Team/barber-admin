@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./components/App";
+import AdminPanel from "./components/Admin/Admin";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AdminPanel />
   </React.StrictMode>,
   document.getElementById("root")
 );
