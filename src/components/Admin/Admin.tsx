@@ -13,13 +13,22 @@ import {
 } from "react-admin-firebase";
 
 import { CommentsList } from "../Comments/CommentsList";
+import { CreateComment } from "../Comments/CreateComment";
+import { EditComment } from "../Comments/EditComment";
+
+import { FeaturesList } from "../Features/FeaturesList";
+
+import { GalleryList } from "../Gallery/GalleryList";
+
+import { MainPage } from "../MainPage/MainPage";
+import { MainPageList } from "../MainPage/MainPageList";
 
 import { firebaseConfig } from "../../firebase/firebaseConfig";
 
 const options: RAFirebaseOptions = {
 	logging: true,
 	rootRef: "/",
-	watch: ["comments", "features"],
+	watch: ["comments", "features", "gallery", "mainPage"],
 };
 
 const dataProvider = FirebaseDataProvider(firebaseConfig, options);
@@ -31,15 +40,22 @@ const AdminPanel: React.FC = () => {
 			<Resource
 				name="comments"
 				list={CommentsList}
-				edit={EditGuesser}
-				create={}
+				edit={EditComment}
+				create={CreateComment}
 			/>
 			<Resource
 				name="features"
-				list={ListGuesser}
+				list={FeaturesList}
 				show={ShowGuesser}
 				edit={EditGuesser}
 			/>
+			<Resource
+				name="gallery"
+				list={GalleryList}
+				show={ShowGuesser}
+				edit={EditGuesser}
+			/>
+			<Resource name="mainPage" list={MainPageList} edit={MainPage} />
 		</Admin>
 	);
 };

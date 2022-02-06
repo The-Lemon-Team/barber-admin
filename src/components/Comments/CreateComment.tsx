@@ -5,15 +5,16 @@ import {
 	TextInput,
 	DateInput,
 	ImageInput,
+	CreateProps,
 } from "react-admin";
 
-export const CreateComment = () => {
+export const CreateComment = (props: CreateProps) => {
 	return (
-		<Create>
+		<Create {...props}>
 			<SimpleForm>
 				<TextInput source="authorName" />
 				<DateInput source="date" defaultValue={new Date()} />
-				<ImageInput />
+				<ImageInput source="avatar" />
 				<TextInput source="text" />
 			</SimpleForm>
 		</Create>

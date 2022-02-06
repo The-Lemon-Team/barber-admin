@@ -2,6 +2,7 @@ import React from "react";
 import {
 	Datagrid,
 	DateField,
+	EditButton,
 	List,
 	TextField,
 	ImageField,
@@ -16,6 +17,7 @@ export const CommentsList = (props: ResourceComponentProps) => {
 				<ImageField source="avatar" />
 				<DateField source="date" />
 				<TextField source="text" />
+				<EditButton />
 			</Datagrid>
 		</List>
 	);
